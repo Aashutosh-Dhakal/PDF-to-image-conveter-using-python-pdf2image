@@ -4,8 +4,10 @@ import os
 
 pdf_folder_path = './pdf'
 file_names = os.listdir(pdf_folder_path)
-file_names = [f for f in file_names if os.path.isfile(
-    os.path.join(pdf_folder_path, f))]
+file_names = [
+    f for f in file_names
+    if os.path.isfile(os.path.join(pdf_folder_path, f)) and not f.startswith('.')
+]
 
 print('Program Started')
 try:
